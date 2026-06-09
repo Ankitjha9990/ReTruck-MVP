@@ -1,0 +1,93 @@
+.features-grid {
+  background-color: #ffffff;
+  padding: 80px 24px;
+}
+
+.fg-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fg-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.fg-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.fg-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.fg-card {
+  background-color: #F5F7F4;
+  border-radius: 12px;
+  padding: 28px 24px;
+  border: 1px solid #e8ede9;
+}
+
+.fg-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background-color: #e8f0fd;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+
+.fg-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.fg-card-desc {
+  font-size: 13px;
+  color: #717973;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .fg-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    padding: 56px 16px;
+  }
+
+  .fg-title {
+    font-size: 26px;
+  }
+
+  .fg-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .features-grid {
+    padding: 40px 12px;
+  }
+  
+  .fg-title {
+    font-size: 22px;
+  }
+  
+  .fg-card {
+    padding: 20px 16px;
+  }
+}
+

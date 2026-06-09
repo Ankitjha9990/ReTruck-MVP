@@ -1,0 +1,634 @@
+/* ═══════════════════════════════════════════════════════
+   BOOKING DETAILS PAGE (SHIPPER) — Stylesheet
+   Vertical timeline, driver bio card, cargo details grid, animations
+   ═══════════════════════════════════════════════════════ */
+
+.booking-details-page {
+  animation: bdPageEnter 450ms var(--ease-spring) forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@keyframes bdPageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back Button */
+.bd-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #6B7280);
+  cursor: pointer;
+  width: max-content;
+  transition: color 200ms ease;
+  padding: 6px 0;
+}
+
+.bd-back:hover {
+  color: var(--color-green, #2ECC8F);
+}
+
+/* ─── Header Summary Card ────────────────────────── */
+.bd-header-card {
+  background: var(--color-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: box-shadow 300ms ease;
+}
+
+.bd-header-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.bd-header-card__ref {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #9CA3AF);
+  letter-spacing: 0.05em;
+  font-family: monospace;
+}
+
+.bd-header-card__route {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 850;
+  color: var(--color-text-primary, #1A1A2E);
+  letter-spacing: -0.5px;
+  margin-top: 4px;
+}
+
+.bd-header-card__arrow {
+  color: var(--color-green, #2ECC8F);
+}
+
+.bd-header-card__date {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary, #6B7280);
+  display: block;
+  margin-top: 4px;
+}
+
+.bd-header-card__right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.bd-header-card__price {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-green, #2ECC8F);
+  letter-spacing: -0.5px;
+}
+
+.bd-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill, 999px);
+  font-size: 0.75rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.bd-status--warning { background: var(--color-warning-light, #FEF3C7); color: #B45309; }
+.bd-status--success { background: var(--color-green-light, #D1FAE5); color: var(--color-green-text, #065F46); }
+.bd-status--error { background: var(--color-error-light, #FEE2E2); color: var(--color-error, #EF4444); }
+.bd-status--info { background: #DBEAFE; color: #1E40AF; }
+
+/* ─── Layout Grid ────────────────────────────────── */
+.bd-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bd-grid__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.bd-grid__right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ─── Cards ──────────────────────────────────────── */
+.bd-card {
+  background: var(--color-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+}
+
+.bd-card__title {
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: var(--color-text-primary, #1A1A2E);
+  margin-bottom: 20px;
+  letter-spacing: -0.2px;
+}
+
+/* ─── Timeline ───────────────────────────────────── */
+.bd-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.bd-timeline-step {
+  display: flex;
+  gap: 16px;
+  opacity: 0.55;
+  transition: opacity 300ms ease;
+}
+
+.bd-timeline-step--completed {
+  opacity: 1;
+}
+
+.bd-timeline-step--active {
+  opacity: 1;
+}
+
+.bd-timeline-step__left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.bd-timeline-step__node {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-bg, #F7F9FC);
+  border: 1.5px solid var(--color-border, #E5E7EB);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted, #9CA3AF);
+  transition: all 300ms ease;
+}
+
+.bd-timeline-step--completed .bd-timeline-step__node {
+  background: var(--color-green-light, #D1FAE5);
+  border-color: var(--color-green, #2ECC8F);
+  color: var(--color-green, #2ECC8F);
+}
+
+.bd-timeline-step--active .bd-timeline-step__node {
+  background: #FFFFFF;
+  border-color: var(--color-green, #2ECC8F);
+  color: var(--color-green, #2ECC8F);
+  box-shadow: 0 0 0 4px var(--color-green-light, #D1FAE5);
+  animation: bdNodePulse 2s infinite ease-in-out;
+}
+
+@keyframes bdNodePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.bd-timeline-step__connector {
+  width: 2px;
+  flex: 1;
+  background: var(--color-border, #E5E7EB);
+  min-height: 36px;
+  transition: background 300ms ease;
+}
+
+.bd-timeline-step--completed .bd-timeline-step__connector {
+  background: var(--color-green, #2ECC8F);
+}
+
+.bd-timeline-step__right {
+  padding-bottom: 24px;
+  flex: 1;
+}
+
+.bd-timeline-step__title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.bd-timeline-step__desc {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary, #6B7280);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.bd-timeline-step__time {
+  font-size: 0.725rem;
+  font-weight: 550;
+  color: var(--color-text-muted, #9CA3AF);
+  display: block;
+  margin-top: 6px;
+}
+
+/* Rejected Banner */
+.bd-rejected-banner {
+  background: var(--color-error-light, #FEE2E2);
+  border-radius: var(--radius-md, 10px);
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.bd-rejected-banner__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #991B1B;
+}
+
+.bd-rejected-banner__desc {
+  font-size: 0.8rem;
+  color: #B91C1C;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ─── Cargo Details ──────────────────────────────── */
+.bd-cargo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.bd-cargo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.bd-cargo-item__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #9CA3AF);
+  letter-spacing: 0.05em;
+}
+
+.bd-cargo-item__value {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1A1A2E);
+  display: block;
+  margin-top: 2px;
+}
+
+/* Address visual connections */
+.bd-address-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 24px;
+  border-top: 1px solid var(--color-border, #E5E7EB);
+  padding-top: 20px;
+}
+
+.bd-address {
+  display: flex;
+  gap: 12px;
+}
+
+.bd-address__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.bd-address__dot--green { background: var(--color-green, #2ECC8F); }
+.bd-address__dot--navy { background: var(--color-navy, #1B2B4B); }
+
+.bd-address__line {
+  width: 2px;
+  height: 24px;
+  background: var(--color-border, #E5E7EB);
+  margin-left: 4px;
+}
+
+.bd-address__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #9CA3AF);
+  letter-spacing: 0.05em;
+}
+
+.bd-address__text {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary, #6B7280);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* Notes block */
+.bd-notes-block {
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--color-bg, #F7F9FC);
+  border-radius: var(--radius-md, 10px);
+  border-left: 3px solid var(--color-border, #E5E7EB);
+}
+
+.bd-notes-block__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted, #9CA3AF);
+  letter-spacing: 0.05em;
+}
+
+.bd-notes-block__text {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary, #6B7280);
+  font-style: italic;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* ─── Driver Bio Card ────────────────────────────── */
+.bd-driver-profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.bd-driver-avatar-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+}
+
+.bd-driver-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--color-border, #E5E7EB);
+}
+
+.bd-driver-verified {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-green, #2ECC8F);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 1.5px solid #FFFFFF;
+}
+
+.bd-driver-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bd-driver-name {
+  font-size: 0.95rem;
+  font-weight: 750;
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.bd-driver-ratings {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.725rem;
+  color: var(--color-text-secondary, #6B7280);
+}
+
+.bd-driver-license {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #9CA3AF);
+  font-family: monospace;
+}
+
+.bd-driver-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.bd-driver-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-md, 10px);
+  cursor: pointer;
+  min-height: 42px;
+  transition: all 200ms ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.bd-driver-btn--contact {
+  background: linear-gradient(135deg, #2ECC8F 0%, #27B37D 100%);
+  color: #FFFFFF;
+  border: none;
+  box-shadow: 0 2px 8px rgba(46, 204, 143, 0.2);
+}
+
+.bd-driver-btn--contact:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(46, 204, 143, 0.3);
+}
+
+.bd-driver-btn--chat {
+  background: var(--color-surface, #FFFFFF);
+  color: var(--color-text-secondary, #6B7280);
+  border: 1.5px solid var(--color-border, #E5E7EB);
+}
+
+.bd-driver-btn--chat:hover {
+  background: var(--color-bg, #F7F9FC);
+  border-color: var(--color-text-muted);
+}
+
+/* ─── Logistics Actions ──────────────────────────── */
+.bd-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bd-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-text-secondary, #6B7280);
+  background: var(--color-bg, #F7F9FC);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-md, 10px);
+  cursor: pointer;
+  transition: all 200ms ease;
+  text-align: left;
+  min-height: 42px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bd-action-btn:hover {
+  background: var(--color-surface, #FFFFFF);
+  border-color: var(--color-green, #2ECC8F);
+  color: var(--color-green, #2ECC8F);
+  transform: translateX(3px);
+}
+
+.bd-action-btn--support:hover {
+  border-color: var(--color-navy, #1B2B4B);
+  color: var(--color-navy, #1B2B4B);
+}
+
+/* ─── Loading & Error States ─────────────────────── */
+.bd-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  gap: 16px;
+  color: var(--color-text-secondary, #6B7280);
+}
+
+.bd-loading__spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--color-border, #E5E7EB);
+  border-top-color: var(--color-green, #2ECC8F);
+  border-radius: 50%;
+  animation: bdSpin 1s linear infinite;
+}
+
+@keyframes bdSpin { to { transform: rotate(360deg); } }
+
+.bd-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  text-align: center;
+  background: var(--color-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-lg, 16px);
+  gap: 16px;
+  max-width: 440px;
+  margin: 40px auto;
+}
+
+.bd-error__title {
+  font-size: 1.25rem;
+  font-weight: 750;
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.bd-error__subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #6B7280);
+  line-height: 1.5;
+}
+
+.bd-error__cta {
+  padding: 10px 20px;
+  background: var(--color-green, #2ECC8F);
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-md, 10px);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.bd-error__cta:hover {
+  background: var(--color-green-dark, #27B37D);
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ═══════════════════════════════════════════════════════ */
+
+@media (min-width: 576px) {
+  .bd-header-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bd-header-card__right {
+    align-items: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .bd-cargo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bd-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .bd-grid__left {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .bd-grid__right {
+    width: 320px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 90px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .bd-grid__right {
+    width: 360px;
+  }
+}

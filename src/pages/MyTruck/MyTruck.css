@@ -1,0 +1,299 @@
+/* ═══════════════════════════════════════════════════════
+   MY TRUCK PAGE — Stylesheet
+   BEM naming, mobile-first responsive layout
+   ═══════════════════════════════════════════════════════ */
+
+.my-truck-page {
+  animation: truckPageFadeIn 450ms var(--ease-spring) forwards;
+}
+
+@keyframes truckPageFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Header Section */
+.mt-header {
+  margin-bottom: 24px;
+}
+
+.mt-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary, #1A1A2E);
+  letter-spacing: -0.5px;
+}
+
+.mt-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #6B7280);
+  margin-top: 4px;
+}
+
+/* Grid Layout */
+.mt-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* Card Preview Column */
+.mt-preview-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mt-card {
+  background: var(--color-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.mt-card__image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #E5E7EB;
+}
+
+.mt-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mt-card__upload-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(26, 26, 46, 0.75);
+  color: #FFFFFF;
+  border: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  backdrop-filter: blur(4px);
+}
+
+.mt-card__upload-btn:hover {
+  background: var(--color-green, #2ECC8F);
+}
+
+.mt-card__body {
+  padding: 20px;
+}
+
+.mt-card__badge-row {
+  margin-bottom: 10px;
+}
+
+.mt-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-green-light, #D1FAE5);
+  color: var(--color-green-text, #065F46);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 999px);
+  font-size: 0.725rem;
+  font-weight: 700;
+}
+
+.mt-card__number {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-text-primary, #1A1A2E);
+  font-family: monospace;
+}
+
+.mt-card__specs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-border, #E5E7EB);
+}
+
+.mt-card__spec {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mt-card__spec-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-text-muted, #9CA3AF);
+  letter-spacing: 0.05em;
+}
+
+.mt-card__spec-val {
+  font-size: 0.875rem;
+  font-weight: 750;
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.mt-card__spec-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-border, #E5E7EB);
+}
+
+/* Info Box */
+.mt-info-box {
+  background: var(--color-navy-light, #EFF6FF);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: var(--radius-md, 10px);
+  padding: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.mt-info-box__icon {
+  color: var(--color-info, #3B82F6);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mt-info-box__text {
+  font-size: 0.785rem;
+  color: var(--color-navy-mid, #2D4072);
+  line-height: 1.4;
+}
+
+/* Form Column */
+.mt-form-card {
+  background: var(--color-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.mt-form-card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1A1A2E);
+  margin-bottom: 20px;
+}
+
+/* Truck photo uploader section inside form card */
+.mt-photo-uploader {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border, #E5E7EB);
+}
+
+.mt-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mt-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mt-form__row {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mt-form__label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.mt-form__input,
+.mt-form__select {
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border, #E5E7EB);
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.875rem;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: all 150ms ease;
+  min-height: 44px;
+  background: var(--color-surface, #FFFFFF);
+  color: var(--color-text-primary, #1A1A2E);
+}
+
+.mt-form__input:focus,
+.mt-form__select:focus {
+  border-color: var(--color-green, #2ECC8F);
+  box-shadow: 0 0 0 3px rgba(46, 204, 143, 0.15);
+}
+
+.mt-form__help {
+  font-size: 0.725rem;
+  color: var(--color-text-secondary, #6B7280);
+}
+
+.mt-form__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--color-green) 0%, var(--color-green-dark) 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-md, 10px);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease;
+  min-height: 44px;
+  box-shadow: var(--shadow-green);
+  font-family: 'Inter', sans-serif;
+  width: max-content;
+  margin-top: 10px;
+}
+
+.mt-form__submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(46, 204, 143, 0.45);
+}
+
+.mt-form__submit:active {
+  transform: scale(0.97);
+}
+
+.mt-form__submit--saving {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 576px) {
+  .mt-form__row {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .mt-form__group--half {
+    flex: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .mt-content-grid {
+    grid-template-columns: 340px 1fr;
+    gap: 28px;
+  }
+}

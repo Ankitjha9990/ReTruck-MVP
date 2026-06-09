@@ -1,0 +1,136 @@
+.service-cards {
+  background-color: #F5F7F4;
+  padding: 0 24px 80px;
+}
+
+.sc-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sc-card {
+  border-radius: 16px;
+  padding: 36px 32px;
+  position: relative;
+}
+
+.sc-standard {
+  background-color: #1B2B4B;
+}
+
+.sc-return {
+  background-color: #2ECC8F;
+}
+
+.sc-badge-new {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: #ffffff;
+  color: #1B2B4B;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.sc-tag {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.sc-desc {
+  font-size: 14px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.sc-features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.sc-feature-item {
+  font-size: 14px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sc-check {
+  color: #a0b4cc;
+  font-weight: 600;
+}
+
+.sc-check-green {
+  color: #1B2B4B;
+  font-weight: 700;
+}
+
+.sc-btn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.sc-btn:hover {
+  opacity: 0.9;
+}
+
+.sc-btn-dark {
+  background-color: #ffffff;
+  color: #1B2B4B;
+}
+
+.sc-btn-green {
+  background-color: #1B2B4B;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .sc-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .sc-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .service-cards {
+    padding: 0 12px 40px;
+  }
+  
+  .sc-card {
+    padding: 24px 16px;
+  }
+  
+  .sc-tag {
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  
+  .sc-badge-new {
+    top: 16px;
+    right: 16px;
+  }
+  
+  .sc-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+

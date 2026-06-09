@@ -1,0 +1,68 @@
+/**
+ * Indian Cities Database — ReTruck MVP
+ * 50+ freight corridor cities for autocomplete
+ * TRD Section 12
+ */
+
+var CITIES = [
+  { name: 'Patna', state: 'Bihar' },
+  { name: 'Delhi', state: 'Delhi' },
+  { name: 'Mumbai', state: 'Maharashtra' },
+  { name: 'Kolkata', state: 'West Bengal' },
+  { name: 'Varanasi', state: 'Uttar Pradesh' },
+  { name: 'Lucknow', state: 'Uttar Pradesh' },
+  { name: 'Bangalore', state: 'Karnataka' },
+  { name: 'Chennai', state: 'Tamil Nadu' },
+  { name: 'Hyderabad', state: 'Telangana' },
+  { name: 'Pune', state: 'Maharashtra' },
+  { name: 'Ahmedabad', state: 'Gujarat' },
+  { name: 'Surat', state: 'Gujarat' },
+  { name: 'Jaipur', state: 'Rajasthan' },
+  { name: 'Chandigarh', state: 'Punjab' },
+  { name: 'Ludhiana', state: 'Punjab' },
+  { name: 'Nashik', state: 'Maharashtra' },
+  { name: 'Rajkot', state: 'Gujarat' },
+  { name: 'Indore', state: 'Madhya Pradesh' },
+  { name: 'Bhopal', state: 'Madhya Pradesh' },
+  { name: 'Nagpur', state: 'Maharashtra' },
+  { name: 'Kanpur', state: 'Uttar Pradesh' },
+  { name: 'Agra', state: 'Uttar Pradesh' },
+  { name: 'Allahabad', state: 'Uttar Pradesh' },
+  { name: 'Ranchi', state: 'Jharkhand' },
+  { name: 'Jamshedpur', state: 'Jharkhand' },
+  { name: 'Dhanbad', state: 'Jharkhand' },
+  { name: 'Gaya', state: 'Bihar' },
+  { name: 'Muzaffarpur', state: 'Bihar' },
+  { name: 'Hajipur', state: 'Bihar' },
+  { name: 'Bhagalpur', state: 'Bihar' },
+  { name: 'Darbhanga', state: 'Bihar' },
+  { name: 'Guwahati', state: 'Assam' },
+  { name: 'Coimbatore', state: 'Tamil Nadu' },
+  { name: 'Madurai', state: 'Tamil Nadu' },
+  { name: 'Visakhapatnam', state: 'Andhra Pradesh' },
+  { name: 'Vijayawada', state: 'Andhra Pradesh' },
+  { name: 'Kochi', state: 'Kerala' },
+  { name: 'Thiruvananthapuram', state: 'Kerala' },
+  { name: 'Vadodara', state: 'Gujarat' },
+  { name: 'Jodhpur', state: 'Rajasthan' },
+  { name: 'Udaipur', state: 'Rajasthan' },
+  { name: 'Raipur', state: 'Chhattisgarh' },
+  { name: 'Dehradun', state: 'Uttarakhand' },
+  { name: 'Meerut', state: 'Uttar Pradesh' },
+  { name: 'Amritsar', state: 'Punjab' },
+  { name: 'Jalandhar', state: 'Punjab' },
+  { name: 'Aurangabad', state: 'Maharashtra' },
+  { name: 'Solapur', state: 'Maharashtra' },
+  { name: 'Hubli', state: 'Karnataka' },
+  { name: 'Mysore', state: 'Karnataka' },
+  { name: 'Siliguri', state: 'West Bengal' },
+  { name: 'Bhubaneswar', state: 'Odisha' },
+  { name: 'Cuttack', state: 'Odisha' },
+  { name: 'Gwalior', state: 'Madhya Pradesh' },
+  { name: 'Noida', state: 'Uttar Pradesh' },
+  { name: 'Gurugram', state: 'Haryana' },
+  { name: 'Faridabad', state: 'Haryana' }
+];
+
+export { CITIES };
+export default CITIES;

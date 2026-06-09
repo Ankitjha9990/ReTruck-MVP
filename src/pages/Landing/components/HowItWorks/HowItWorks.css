@@ -1,0 +1,155 @@
+.how-it-works {
+  background-color: #F5F7F4;
+  padding: 80px 24px;
+}
+
+.hiw-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hiw-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.hiw-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 14px;
+}
+
+.hiw-subtitle {
+  font-size: 15px;
+  color: #717973;
+  max-width: 480px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.hiw-tabs {
+  display: inline-flex;
+  background-color: #e8ede9;
+  border-radius: 999px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab-pill {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 24px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #717973;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-pill.active {
+  background-color: #ffffff;
+  color: #111111;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.hiw-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.hiw-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 28px 20px;
+  border: 1px solid #e8ede9;
+  text-align: left;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.hiw-step-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2ECC8F;
+  background-color: #e8f8f1;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.hiw-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background-color: #f0fdf8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+
+.hiw-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 8px;
+}
+
+.hiw-card-desc {
+  font-size: 13px;
+  color: #717973;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .hiw-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 56px 16px;
+  }
+
+  .hiw-title {
+    font-size: 26px;
+  }
+
+  .hiw-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .how-it-works {
+    padding: 40px 12px;
+  }
+
+  .hiw-title {
+    font-size: 22px;
+  }
+
+  .hiw-subtitle {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .tab-pill {
+    padding: 6px 16px;
+    font-size: 13px;
+  }
+
+  .hiw-card {
+    padding: 20px 16px;
+  }
+}
+

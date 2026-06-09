@@ -1,0 +1,94 @@
+.cta-banner {
+  background-color: #1B2B4B;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.cta-subtitle {
+  font-size: 15px;
+  color: #a0b4cc;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn-shipper {
+  background-color: #2ECC8F;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.cta-btn-shipper:hover {
+  background-color: #25b87d;
+}
+
+.cta-btn-driver {
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.cta-btn-driver:hover {
+  border-color: #ffffff;
+}
+
+@media (max-width: 480px) {
+  .cta-banner {
+    padding: 56px 16px;
+  }
+
+  .cta-title {
+    font-size: 24px;
+  }
+
+  .cta-btn-shipper,
+  .cta-btn-driver {
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .cta-banner {
+    padding: 40px 12px;
+  }
+  
+  .cta-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .cta-subtitle {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+}
+
